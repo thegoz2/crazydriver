@@ -8,16 +8,21 @@ public class countdown : MonoBehaviour
     public float totalTime;
     public Text timertext;
 
+    public float countTime;
     private float minutes;
     private float seconds;
 
+    private void Start()
+    {
+        countTime = totalTime;
+    }
 
     private void Update()
     {
-        totalTime -= Time.deltaTime;
+        countTime -= Time.deltaTime;
 
-        minutes = (int)(totalTime / 60);
-        seconds = (int)(totalTime % 60);
+        minutes = (int)(countTime / 60);
+        seconds = (int)(countTime % 60);
         timertext.text = minutes.ToString() + ":" + seconds.ToString();
     }
 }

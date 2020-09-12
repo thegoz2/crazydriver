@@ -10,14 +10,14 @@ public class killenter : MonoBehaviour
     public float weight;
     public Text weightshower;
     private weightcouter currentweightcouter;
-    private ScoreSys currentscorecouter;
+    private Scoresse currentscorecouter;
     public float score;
     public Text scoreshower;
 
     void Start()
     {
         currentweightcouter = (weightcouter)FindObjectOfType(typeof(weightcouter));
-        currentscorecouter = (ScoreSys)FindObjectOfType(typeof(ScoreSys));
+        currentscorecouter = (Scoresse)FindObjectOfType(typeof(Scoresse));
     }
 
     void OnTriggerEnter(Collider other)
@@ -25,7 +25,7 @@ public class killenter : MonoBehaviour
         isShowing = !isShowing;
         bar.enabled = true;
         currentweightcouter.currentweight += weight;
-        currentscorecouter.currentscore += score;
         Destroy(gameObject);
+        currentscorecouter.currentscore += score;
     }
 }
