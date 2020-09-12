@@ -22,6 +22,7 @@ public class Load_AtStart : MonoBehaviour
         else if (Go_to == 3) { Application.Quit(); }
         else if (Go_to == 2) { SceneManager.LoadScene("map_select-stage"); }
         else if (Go_to == 4) { SceneManager.LoadScene("map_start"); }
+        else if (Go_to == 5) { SceneManager.LoadScene("map_Upgrade"); }
     }
 
 }

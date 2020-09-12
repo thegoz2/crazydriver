@@ -7,6 +7,7 @@ public class ClickDrag : MonoBehaviour
 {
 
     private Vector3 mOffset;
+    public Camera Cameraforpacking;
 
 
 
@@ -18,7 +19,7 @@ public class ClickDrag : MonoBehaviour
 
     {
 
-        mZCoord = Camera.main.WorldToScreenPoint(
+        mZCoord = Cameraforpacking.WorldToScreenPoint(
 
             gameObject.transform.position).z;
 
@@ -50,7 +51,7 @@ public class ClickDrag : MonoBehaviour
 
         // Convert it to world points
 
-        return Camera.main.ScreenToWorldPoint(mousePoint);
+        return Cameraforpacking.ScreenToWorldPoint(mousePoint);
 
     }
 
