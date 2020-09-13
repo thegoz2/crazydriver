@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class NewBehaviourScript : MonoBehaviour
 {
     public GameObject Canvasmenu_end;
+    public GameObject Canvasmenu_time;
     public GameObject Score_hide;
     public Text timer;
     public Text sc;
@@ -21,7 +22,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         Canvasmenu_end.gameObject.SetActive(false);
         Score_hide.gameObject.SetActive(false);
-        End_time = (countdown)FindObjectOfType(typeof(countdown));
+        //End_time = (countdown)FindObjectOfType(typeof(countdown));
     }
 
     
@@ -31,6 +32,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Canvasmenu_end.gameObject.SetActive(true);
+            Canvasmenu_time.gameObject.SetActive(false);
             timer.text = End_time.countTime.ToString();
             if (End_time.countTime / End_time.countTime > 0.2) { pertime = 1.0*0.1*10; }
             else { pertime = 0.5*0.1 * 10; }
