@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scores : MonoBehaviour
+public class savescore : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float sc;
     void Start()
     {
         

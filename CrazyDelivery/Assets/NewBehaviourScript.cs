@@ -11,8 +11,8 @@ public class NewBehaviourScript : MonoBehaviour
     public Text timer;
     public Text sc;
     public countdown End_time;
-    public ScoreSys Scorefull;
 
+    public savescore savescore;
     private double pertime;
     private double sumscore;
 
@@ -30,13 +30,12 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            //print("help me plssss");
             Canvasmenu_end.gameObject.SetActive(true);
             timer.text = End_time.countTime.ToString();
             if (End_time.countTime / End_time.countTime > 0.2) { pertime = 1.0*0.1*10; }
             else { pertime = 0.5*0.1 * 10; }
-
-            //sc.text = Scorefull* pertime;
+            pertime = savescore.sc * pertime;
+            sc.text = pertime.ToString();
         }
     }
     

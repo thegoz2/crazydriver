@@ -7,6 +7,7 @@ public class weightcouter : MonoBehaviour
 {
     public float currentweight;
     public Text weightshow;
+    public Image healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -18,5 +19,6 @@ public class weightcouter : MonoBehaviour
     void Update()
     {
         weightshow.text = currentweight.ToString() + "kg";
+        healthBar.fillAmount = currentweight / 30;
     }
 }
